@@ -4,6 +4,8 @@
 #include "Engine/State.hpp"
 #include "Engine/Player.hpp"
 
+#include "Npc.hpp"
+
 #include "Engine/ResourceHolder.hpp"
 #include "Engine/ResourceIdentifiers.hpp"
 
@@ -27,6 +29,7 @@ class TestState : public State
 
 		sf::Texture			mTexture;
 		sf::Sprite          mSprite;
+		Npc					mNpc; // TODO Make unique pointer otherwise will be hard to add
 };
 
 #endif // GAME_GAMESTATE_HPP

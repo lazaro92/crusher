@@ -6,7 +6,7 @@
 ### variables ##############
 
 CXX      := g++
-OBJECTS  := main.o Application.o CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o State.o TestState.o
+OBJECTS  := main.o Application.o CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o State.o TestState.o Npc.o
 LIBRARY  := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -I include/
 
@@ -62,8 +62,13 @@ MusicPlayer.o: src/MusicPlayer.cpp include/Engine/MusicPlayer.hpp
 State.o: src/State.cpp include/Engine/State.hpp
 	$(CXX) $(CXXFLAGS) -c src/State.cpp
 
+# States
+
 TestState.o: src/TestState.cpp include/TestState.hpp
 	$(CXX) $(CXXFLAGS) -c src/TestState.cpp
+
+Npc.o: src/Npc.cpp include/Npc.hpp
+	$(CXX) $(CXXFLAGS) -c src/Npc.cpp
 
 ###################
 

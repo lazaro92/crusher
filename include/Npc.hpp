@@ -1,27 +1,20 @@
 #ifndef NPC_HPP
 #define NPC_HPP
 
-#include "Engine/State.hpp"
-#include "Engine/Player.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
-#include <SFML/Graphics/Text.hpp>
 
-/**
-* State that is for playing the game 
-*/
-class Npc
+
+class Npc : public sf::Transformable, public sf::Drawable, private sf::NonCopyable
 {
-	public:
-							TestState(StateStack& stack, Context context);
+    public:
+                        Npc(sf::Sprite& sprite);
 
-		virtual void		draw();
-		virtual bool		update(sf::Time dt);
-		virtual bool		handleEvent(const sf::Event& event);
+    private:
+        virtual void    draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-
-	private:
-		Player&				mPlayer;
+    private:
+        sf::Sprite&     mSprite;
 };
 
 #endif // NPC_HPP

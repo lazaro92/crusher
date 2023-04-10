@@ -14,6 +14,7 @@ TestState::TestState(StateStack& stack, Context context)
 
 	mTexture = mTextures.get(Textures::EntitiesSheet);
 	mSprite = sf::Sprite(mTexture, sf::IntRect(0, 0, 32, 32));
+	mNpc = Npc(mSprite);
 
 }
 
