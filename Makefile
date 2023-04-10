@@ -6,7 +6,7 @@
 ### variables ##############
 
 CXX      := g++
-OBJECTS  := main.o Application.o
+OBJECTS  := main.o Application.o CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o State.o TestState.o
 LIBRARY  := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -I include/
 
@@ -38,9 +38,32 @@ output: $(OBJECTS)
 main.o: src/main.cpp
 	$(CXX) $(CXXFLAGS) -c src/main.cpp
 
-Application.o: src/Application.cpp include/Application.hpp
+Application.o: src/Application.cpp include/Engine/Application.hpp
 	$(CXX) $(CXXFLAGS) -c src/Application.cpp
 
+CommandQueue.o: src/Application.cpp include/Engine/CommandQueue.hpp
+	$(CXX) $(CXXFLAGS) -c src/CommandQueue.cpp
+
+Player.o: src/Player.cpp include/Engine/Player.hpp
+	$(CXX) $(CXXFLAGS) -c src/Player.cpp
+
+SoundPlayer.o: src/SoundPlayer.cpp include/Engine/SoundPlayer.hpp
+	$(CXX) $(CXXFLAGS) -c src/SoundPlayer.cpp
+
+StateStack.o: src/StateStack.cpp include/Engine/StateStack.hpp
+	$(CXX) $(CXXFLAGS) -c src/StateStack.cpp
+
+Command.o: src/Command.cpp include/Engine/Command.hpp
+	$(CXX) $(CXXFLAGS) -c src/Command.cpp
+
+MusicPlayer.o: src/MusicPlayer.cpp include/Engine/MusicPlayer.hpp
+	$(CXX) $(CXXFLAGS) -c src/MusicPlayer.cpp
+
+State.o: src/State.cpp include/Engine/State.hpp
+	$(CXX) $(CXXFLAGS) -c src/State.cpp
+
+TestState.o: src/TestState.cpp include/TestState.hpp
+	$(CXX) $(CXXFLAGS) -c src/TestState.cpp
 
 ###################
 
