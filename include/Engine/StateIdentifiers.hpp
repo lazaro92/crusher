@@ -7,12 +7,9 @@ namespace States
 	enum ID
 	{
 		None,
-		Title,
-		Menu,
+		SoleauSplash,
+		PhoenixSplash,
 		Test,
-		Loading,
-		Pause,
-		Settings
 	};
 }
 

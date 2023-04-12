@@ -7,13 +7,13 @@
 #endif
 
 // INCLUDE STATES
-#include "TestState.hpp"
+#include "SoleauState.hpp"
 
 
 const sf::Time Application::TimePerFrame = sf::seconds(1.f/60.f);
 
 Application::Application()
-: mWindow(sf::VideoMode(256, 224), "Crusher", sf::Style::Close)
+: mWindow(sf::VideoMode(512, 448), "Crusher", sf::Style::Close)
 , mTextures()
 , mFonts()
 , mPlayer()
@@ -29,11 +29,9 @@ Application::Application()
     mWindow.setFramerateLimit(60);
 	mWindow.setKeyRepeatEnabled(false);
 
-    // LOAD fonts
     mFonts.load(Fonts::Main, "Media/Sansation.ttf");
 
-    // LOAD Button Textures and Title Screen Texture
-	// mTextures.load(Textures::TitleScreen,		"Media/Textures/Title_screen.png");
+	mTextures.load(Textures::SoleauLogo, "Media/Logos/soleau.png");
 
     #if _DEBUG
         mStatisticsText.setFont(mFonts.get(Fonts::Main));
@@ -44,7 +42,7 @@ Application::Application()
 	registerStates();
     
     // PUSH STATES
-    mStateStack.pushState(States::Test);
+    mStateStack.pushState(States::SoleauSplash);
 
     // SET MUSIC VOLUME
     // mMusic.setVolume(25.f);
@@ -66,7 +64,6 @@ void Application::run()
 			processInput();
 			update(TimePerFrame);
 
-			// Check inside this loop, because stack might be empty before update() call
 			if (mStateStack.isEmpty())
             {
                 #if _DEBUG
@@ -130,5 +127,6 @@ void Application::updateStatistics(sf::Time dt)
 
 void Application::registerStates()
 {
-	mStateStack.registerState<TestState>(States::Test);
+	mStateStack.registerState<SoleauState>(States::SoleauSplash);
+//	mStateStack.registerState<TestState>(States::Test);
 }

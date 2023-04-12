@@ -15,6 +15,8 @@ namespace Textures
 	enum ID
 	{
 		EntitiesSheet,
+		SoleauLogo,
+		PhoenixLogo
 	};
 }
 
