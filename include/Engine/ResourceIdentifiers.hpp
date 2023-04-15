@@ -25,6 +25,7 @@ namespace Fonts
 	enum ID
 	{
 		Main,
+		Pixel,
 	};
 }
 

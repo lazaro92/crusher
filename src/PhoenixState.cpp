@@ -1,16 +1,16 @@
-#include "SoleauState.hpp"
+#include "PhoenixState.hpp"
 #include "Engine/ResourceHolder.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
 
-SoleauState::SoleauState(StateStack& stack, Context context)
+PhoenixState::PhoenixState(StateStack& stack, Context context)
 : State(stack, context)
 , mLogoOpacityEffectTime(sf::Time::Zero)
 , currentStatus(Status::fadeIn)
 , mLogoAlphaChannel(0)
 {
-    mBackgroundSprite.setTexture(context.textures->get(Textures::SoleauLogo));
+    mBackgroundSprite.setTexture(context.textures->get(Textures::PhoenixLogo));
 
 	sf::RenderWindow& window = *getContext().window;
 	mBackgroundSprite.setOrigin(mBackgroundSprite.getGlobalBounds().width / 2, mBackgroundSprite.getGlobalBounds().height / 2);
@@ -19,7 +19,7 @@ SoleauState::SoleauState(StateStack& stack, Context context)
 
 }
 
-void SoleauState::draw()
+void PhoenixState::draw()
 {
 	sf::RenderWindow& window = *getContext().window;
 	window.setView(window.getDefaultView());
@@ -27,7 +27,7 @@ void SoleauState::draw()
 	window.draw(mBackgroundSprite);
 }
 
-bool SoleauState::update(sf::Time dt)
+bool PhoenixState::update(sf::Time dt)
 {
 	mLogoOpacityEffectTime += dt;
 
@@ -56,8 +56,7 @@ bool SoleauState::update(sf::Time dt)
 		{
 			mLogoAlphaChannel = 0;
 			requestStackPop();
-		    requestStackPush(States::PhoenixSplash);
-
+			requestStackPush(States::Title);
 		}
 		mBackgroundSprite.setColor(sf::Color(255, 255, 255, mLogoAlphaChannel));
 		mLogoOpacityEffectTime = sf::Time::Zero;
@@ -65,7 +64,7 @@ bool SoleauState::update(sf::Time dt)
 return false;
 }
 
-bool SoleauState::handleEvent(const sf::Event& event)
+bool PhoenixState::handleEvent(const sf::Event& event)
 {
 	if (event.type == sf::Event::KeyReleased && currentStatus != Status::fadeOut)
 		currentStatus = Status::fadeOut;

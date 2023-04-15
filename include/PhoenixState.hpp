@@ -1,5 +1,5 @@
-#ifndef GAME_SOLEAUSTATE_HPP
-#define GAME_SOLEAUSTATE_HPP
+#ifndef GAME_PHOENIXSTATE_HPP
+#define GAME_PHOENIXSTATE_HPP
 
 #include "Engine/State.hpp"
 
@@ -8,10 +8,10 @@
 #include <SFML/Graphics/Text.hpp>
 
 
-class SoleauState : public State
+class PhoenixState : public State
 {
     public:
-                            SoleauState(StateStack& stack, Context context);
+                            PhoenixState(StateStack& stack, Context context);
 
         virtual void        draw();
         virtual bool        update(sf::Time dt);
@@ -29,4 +29,4 @@ class SoleauState : public State
 
 };
 
-#endif // GAME_SOLEAUSTATE_HPP
+#endif // GAME_PHOENIXSTATE_HPP

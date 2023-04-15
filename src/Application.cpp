@@ -8,6 +8,8 @@
 
 // INCLUDE STATES
 #include "SoleauState.hpp"
+#include "PhoenixState.hpp"
+#include "TitleState.hpp"
 
 
 const sf::Time Application::TimePerFrame = sf::seconds(1.f/60.f);
@@ -30,8 +32,10 @@ Application::Application()
 	mWindow.setKeyRepeatEnabled(false);
 
     mFonts.load(Fonts::Main, "Media/Sansation.ttf");
+	mFonts.load(Fonts::Pixel, "Media/PixelGameFont.ttf");
 
 	mTextures.load(Textures::SoleauLogo, "Media/Logos/soleau.png");
+	mTextures.load(Textures::PhoenixLogo, "Media/Logos/phoenix.png");
 
     #if _DEBUG
         mStatisticsText.setFont(mFonts.get(Fonts::Main));
@@ -128,5 +132,6 @@ void Application::updateStatistics(sf::Time dt)
 void Application::registerStates()
 {
 	mStateStack.registerState<SoleauState>(States::SoleauSplash);
-//	mStateStack.registerState<TestState>(States::Test);
+	mStateStack.registerState<PhoenixState>(States::PhoenixSplash);
+	mStateStack.registerState<TitleState>(States::Title);
 }
