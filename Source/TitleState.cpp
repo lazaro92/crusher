@@ -17,10 +17,14 @@ TitleState::TitleState(StateStack& stack, Context context)
 {
 	sf::RenderWindow& window = *getContext().window;
 
+	mMainLogoSprite.setTexture(context.textures->get(Textures::CrusherLogo));
+	mMainLogoSprite.setOrigin(mMainLogoSprite.getGlobalBounds().width / 2, mMainLogoSprite.getGlobalBounds().height / 2);
+	mMainLogoSprite.setPosition(window.getSize().x / 2, window.getSize().y / 3);
+
 	mText.setFont(context.fonts->get(Fonts::Pixel));
 	mText.setString("Press any key to start");
 	mText.setOrigin(mText.getGlobalBounds().width / 2, mText.getGlobalBounds().height / 2);
-	mText.setPosition(window.getSize().x / 2, window.getSize().y / 2);
+	mText.setPosition(window.getSize().x / 2, (window.getSize().y * 2) / 3);
 
 
 	//mGuiContainer
@@ -58,6 +62,8 @@ TitleState::TitleState(StateStack& stack, Context context)
 void TitleState::draw()
 {
     sf::RenderWindow& window = *getContext().window;
+
+	window.draw(mMainLogoSprite);
 
 	if (!mShowMenu)
 	{

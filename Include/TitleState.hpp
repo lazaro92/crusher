@@ -19,6 +19,7 @@ class TitleState : public State
         virtual bool    handleEvent(const sf::Event& event);
 
     private:
+        sf::Sprite      mMainLogoSprite;
         sf::Text        mText;
 
         bool            mShowText;

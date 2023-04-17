@@ -39,7 +39,8 @@ Application::Application()
 	mTextures.load(Textures::ButtonSelected,	"Media/Textures/GUI/ButtonSelected.png");
 	mTextures.load(Textures::ButtonPressed,		"Media/Textures/GUI/ButtonPressed.png");
 
-	mTextures.load(Textures::SoleauLogo, "Media/Textures/Logos/soleau.png");
+	mTextures.load(Textures::CrusherLogo, "Media/Textures/Logos/crusher.png");
+	mTextures.load(Textures::SoleauLogo,  "Media/Textures/Logos/soleau.png");
 	mTextures.load(Textures::PhoenixLogo, "Media/Textures/Logos/phoenix.png");
 
     #if _DEBUG
