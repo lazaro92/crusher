@@ -10,7 +10,7 @@ OBJECTS  := main.o Button.o Component.o Container.o Label.o Application.o \
  CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o \
 State.o SoleauState.o PhoenixState.o TitleState.o SettingsState.o Utility.o # TestState.o Npc.o
 LIBRARY  := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-CXXFLAGS := -I include/
+CXXFLAGS := -I Include/
 
 ifeq ($(BUILD),develop)
     CXXFLAGS += -Wall -O2 -g
@@ -37,72 +37,72 @@ endif
 output: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(LIBRARY) -o crusher.out $(OBJECTS) 
 
-main.o: src/main.cpp
-	$(CXX) $(CXXFLAGS) -c src/main.cpp
+main.o: Source/main.cpp
+	$(CXX) $(CXXFLAGS) -c Source/main.cpp
 
 # GUI
 
-Button.o: src/GUI/Button.cpp include/Engine/GUI/Button.hpp
-	$(CXX) $(CXXFLAGS) -c src/GUI/Button.cpp
+Button.o: Source/GUI/Button.cpp Include/Engine/GUI/Button.hpp
+	$(CXX) $(CXXFLAGS) -c Source/GUI/Button.cpp
 
-Component.o: src/GUI/Component.cpp include/Engine/GUI/Component.hpp
-	$(CXX) $(CXXFLAGS) -c src/GUI/Component.cpp
+Component.o: Source/GUI/Component.cpp Include/Engine/GUI/Component.hpp
+	$(CXX) $(CXXFLAGS) -c Source/GUI/Component.cpp
 
-Container.o: src/GUI/Container.cpp include/Engine/GUI/Container.hpp
-	$(CXX) $(CXXFLAGS) -c src/GUI/Container.cpp
+Container.o: Source/GUI/Container.cpp Include/Engine/GUI/Container.hpp
+	$(CXX) $(CXXFLAGS) -c Source/GUI/Container.cpp
 
-Label.o: src/GUI/Label.cpp include/Engine/GUI/Label.hpp
-	$(CXX) $(CXXFLAGS) -c src/GUI/Label.cpp
+Label.o: Source/GUI/Label.cpp Include/Engine/GUI/Label.hpp
+	$(CXX) $(CXXFLAGS) -c Source/GUI/Label.cpp
 
 # Others
 
-Application.o: src/Application.cpp include/Engine/Application.hpp
-	$(CXX) $(CXXFLAGS) -c src/Application.cpp
+Application.o: Source/Application.cpp Include/Engine/Application.hpp
+	$(CXX) $(CXXFLAGS) -c Source/Application.cpp
 
-CommandQueue.o: src/Application.cpp include/Engine/CommandQueue.hpp
-	$(CXX) $(CXXFLAGS) -c src/CommandQueue.cpp
+CommandQueue.o: Source/Application.cpp Include/Engine/CommandQueue.hpp
+	$(CXX) $(CXXFLAGS) -c Source/CommandQueue.cpp
 
-Player.o: src/Player.cpp include/Engine/Player.hpp
-	$(CXX) $(CXXFLAGS) -c src/Player.cpp
+Player.o: Source/Player.cpp Include/Engine/Player.hpp
+	$(CXX) $(CXXFLAGS) -c Source/Player.cpp
 
-SoundPlayer.o: src/SoundPlayer.cpp include/Engine/SoundPlayer.hpp
-	$(CXX) $(CXXFLAGS) -c src/SoundPlayer.cpp
+SoundPlayer.o: Source/SoundPlayer.cpp Include/Engine/SoundPlayer.hpp
+	$(CXX) $(CXXFLAGS) -c Source/SoundPlayer.cpp
 
-StateStack.o: src/StateStack.cpp include/Engine/StateStack.hpp
-	$(CXX) $(CXXFLAGS) -c src/StateStack.cpp
+StateStack.o: Source/StateStack.cpp Include/Engine/StateStack.hpp
+	$(CXX) $(CXXFLAGS) -c Source/StateStack.cpp
 
-Command.o: src/Command.cpp include/Engine/Command.hpp
-	$(CXX) $(CXXFLAGS) -c src/Command.cpp
+Command.o: Source/Command.cpp Include/Engine/Command.hpp
+	$(CXX) $(CXXFLAGS) -c Source/Command.cpp
 
-MusicPlayer.o: src/MusicPlayer.cpp include/Engine/MusicPlayer.hpp
-	$(CXX) $(CXXFLAGS) -c src/MusicPlayer.cpp
+MusicPlayer.o: Source/MusicPlayer.cpp Include/Engine/MusicPlayer.hpp
+	$(CXX) $(CXXFLAGS) -c Source/MusicPlayer.cpp
 
-State.o: src/State.cpp include/Engine/State.hpp
-	$(CXX) $(CXXFLAGS) -c src/State.cpp
+State.o: Source/State.cpp Include/Engine/State.hpp
+	$(CXX) $(CXXFLAGS) -c Source/State.cpp
 
 # States
 
-SoleauState.o: src/SoleauState.cpp include/SoleauState.hpp
-	$(CXX) $(CXXFLAGS) -c src/SoleauState.cpp
+SoleauState.o: Source/SoleauState.cpp Include/SoleauState.hpp
+	$(CXX) $(CXXFLAGS) -c Source/SoleauState.cpp
 
-PhoenixState.o: src/PhoenixState.cpp include/PhoenixState.hpp
-	$(CXX) $(CXXFLAGS) -c src/PhoenixState.cpp
+PhoenixState.o: Source/PhoenixState.cpp Include/PhoenixState.hpp
+	$(CXX) $(CXXFLAGS) -c Source/PhoenixState.cpp
 
-TitleState.o: src/TitleState.cpp include/TitleState.hpp
-	$(CXX) $(CXXFLAGS) -c src/TitleState.cpp
+TitleState.o: Source/TitleState.cpp Include/TitleState.hpp
+	$(CXX) $(CXXFLAGS) -c Source/TitleState.cpp
 
-SettingsState.o: src/SettingsState.cpp include/SettingsState.hpp
-	$(CXX) $(CXXFLAGS) -c src/SettingsState.cpp
+SettingsState.o: Source/SettingsState.cpp Include/SettingsState.hpp
+	$(CXX) $(CXXFLAGS) -c Source/SettingsState.cpp
 
 
-#TestState.o: src/TestState.cpp include/TestState.hpp
-#	$(CXX) $(CXXFLAGS) -c src/TestState.cpp
+#TestState.o: Source/TestState.cpp Include/TestState.hpp
+#	$(CXX) $(CXXFLAGS) -c Source/TestState.cpp
 
-#Npc.o: src/Npc.cpp include/Npc.hpp
-#	$(CXX) $(CXXFLAGS) -c src/Npc.cpp
+#Npc.o: Source/Npc.cpp Include/Npc.hpp
+#	$(CXX) $(CXXFLAGS) -c Source/Npc.cpp
 
-Utility.o: src/Utility.cpp include/Engine/Utility.hpp
-	$(CXX) $(CXXFLAGS) -c src/Utility.cpp
+Utility.o: Source/Utility.cpp Include/Engine/Utility.hpp
+	$(CXX) $(CXXFLAGS) -c Source/Utility.cpp
 
 
 ###################

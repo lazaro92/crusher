@@ -15,6 +15,7 @@ namespace Textures
 	enum ID
 	{
 		EntitiesSheet,
+		CrusherLogo,
 		SoleauLogo,
 		PhoenixLogo,
 		ButtonNormal,
