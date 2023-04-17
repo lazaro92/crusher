@@ -28,7 +28,6 @@ class Label : public Component
 
         virtual void		handleEvent(const sf::Event& event);
 
-
     private:
         void				draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

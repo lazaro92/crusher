@@ -2,6 +2,7 @@
 #define GAME_TITLESTATE_HPP
 
 #include "Engine/State.hpp"
+#include "Engine/GUI/Container.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
@@ -21,7 +22,10 @@ class TitleState : public State
         sf::Text        mText;
 
         bool            mShowText;
+        bool            mShowMenu;
         sf::Time        mTextEffectTime;
+        GUI::Container  mGUIContainer;
+
 
 };
 

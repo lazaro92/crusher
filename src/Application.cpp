@@ -34,8 +34,12 @@ Application::Application()
     mFonts.load(Fonts::Main, "Media/Sansation.ttf");
 	mFonts.load(Fonts::Pixel, "Media/PixelGameFont.ttf");
 
-	mTextures.load(Textures::SoleauLogo, "Media/Logos/soleau.png");
-	mTextures.load(Textures::PhoenixLogo, "Media/Logos/phoenix.png");
+	mTextures.load(Textures::ButtonNormal,		"Media/Textures/GUI/ButtonNormal.png");
+	mTextures.load(Textures::ButtonSelected,	"Media/Textures/GUI/ButtonSelected.png");
+	mTextures.load(Textures::ButtonPressed,		"Media/Textures/GUI/ButtonPressed.png");
+
+	mTextures.load(Textures::SoleauLogo, "Media/Textures/Logos/soleau.png");
+	mTextures.load(Textures::PhoenixLogo, "Media/Textures/Logos/phoenix.png");
 
     #if _DEBUG
         mStatisticsText.setFont(mFonts.get(Fonts::Main));

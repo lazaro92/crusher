@@ -16,7 +16,10 @@ namespace Textures
 	{
 		EntitiesSheet,
 		SoleauLogo,
-		PhoenixLogo
+		PhoenixLogo,
+		ButtonNormal,
+		ButtonSelected,
+		ButtonPressed
 	};
 }
 

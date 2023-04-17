@@ -6,8 +6,9 @@
 ### variables ##############
 
 CXX      := g++
-OBJECTS  := main.o Application.o CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o State.o \
-SoleauState.o PhoenixState.o TitleState.o Utility.o # TestState.o Npc.o
+OBJECTS  := main.o Button.o Component.o Container.o Label.o Application.o \
+ CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o \
+State.o SoleauState.o PhoenixState.o TitleState.o Utility.o # TestState.o Npc.o
 LIBRARY  := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -I include/
 
@@ -38,6 +39,22 @@ output: $(OBJECTS)
 
 main.o: src/main.cpp
 	$(CXX) $(CXXFLAGS) -c src/main.cpp
+
+# GUI
+
+Button.o: src/GUI/Button.cpp include/Engine/GUI/Button.hpp
+	$(CXX) $(CXXFLAGS) -c src/GUI/Button.cpp
+
+Component.o: src/GUI/Component.cpp include/Engine/GUI/Component.hpp
+	$(CXX) $(CXXFLAGS) -c src/GUI/Component.cpp
+
+Container.o: src/GUI/Container.cpp include/Engine/GUI/Container.hpp
+	$(CXX) $(CXXFLAGS) -c src/GUI/Container.cpp
+
+Label.o: src/GUI/Label.cpp include/Engine/GUI/Label.hpp
+	$(CXX) $(CXXFLAGS) -c src/GUI/Label.cpp
+
+# Others
 
 Application.o: src/Application.cpp include/Engine/Application.hpp
 	$(CXX) $(CXXFLAGS) -c src/Application.cpp
