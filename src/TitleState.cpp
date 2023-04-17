@@ -15,13 +15,17 @@ TitleState::TitleState(StateStack& stack, Context context)
 , mTextEffectTime(sf::Time::Zero)
 , mGUIContainer()
 {
+	sf::RenderWindow& window = *getContext().window;
+
 	mText.setFont(context.fonts->get(Fonts::Pixel));
 	mText.setString("Press any key to start");
-	mText.setPosition(sf::Vector2f(context.window->getSize() / 2u));
+	mText.setOrigin(mText.getGlobalBounds().width / 2, mText.getGlobalBounds().height / 2);
+	mText.setPosition(window.getSize().x / 2, window.getSize().y / 2);
+
 
 	//mGuiContainer
 	auto playButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
-	playButton->setPosition(100, 250);
+	playButton->setPosition(window.getSize().x / 2, 250);
 	playButton->setText("Play");
 	playButton->setCallback([this] ()
 	{
@@ -30,7 +34,7 @@ TitleState::TitleState(StateStack& stack, Context context)
 	});
 
 	auto settingsButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
-	settingsButton->setPosition(100, 300);
+	settingsButton->setPosition(window.getSize().x / 2, 300);
 	settingsButton->setText("Settings");
 	settingsButton->setCallback([this] ()
 	{
@@ -38,7 +42,7 @@ TitleState::TitleState(StateStack& stack, Context context)
 	});
 
 	auto exitButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
-	exitButton->setPosition(100, 350);
+	exitButton->setPosition(window.getSize().x / 2, 350);
 	exitButton->setText("Exit");
 	exitButton->setCallback([this] ()
 	{
