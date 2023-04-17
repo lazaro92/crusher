@@ -10,6 +10,7 @@ namespace States
 		SoleauSplash,
 		PhoenixSplash,
 		Title,
+		Settings,
 		Test,
 	};
 }

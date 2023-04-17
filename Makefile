@@ -8,7 +8,7 @@
 CXX      := g++
 OBJECTS  := main.o Button.o Component.o Container.o Label.o Application.o \
  CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o \
-State.o SoleauState.o PhoenixState.o TitleState.o Utility.o # TestState.o Npc.o
+State.o SoleauState.o PhoenixState.o TitleState.o SettingsState.o Utility.o # TestState.o Npc.o
 LIBRARY  := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -I include/
 
@@ -90,6 +90,9 @@ PhoenixState.o: src/PhoenixState.cpp include/PhoenixState.hpp
 
 TitleState.o: src/TitleState.cpp include/TitleState.hpp
 	$(CXX) $(CXXFLAGS) -c src/TitleState.cpp
+
+SettingsState.o: src/SettingsState.cpp include/SettingsState.hpp
+	$(CXX) $(CXXFLAGS) -c src/SettingsState.cpp
 
 
 #TestState.o: src/TestState.cpp include/TestState.hpp
