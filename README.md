@@ -11,10 +11,18 @@ The game is played in a 25 room map. Once you get the 10,000 points and receive 
 ## Project requirements
 
 - Linux.
-- SFML installed in the system.
+- SFML version 2.5 installed in the system.
 - A C++ compiler (I have used g++).
 
 ## Build
+
+The steps for building the game are:
+
+1. Go to the root of the project and execute `make BUILD=release` for the release version or `make` / `make BUILD=develop` for the development version.
+2. after compiling the game, execute it with `./crusher`
+3. Enjoy! 
+
+The development version has output to the console, shows the FPS in the window and the code does not have the compiler optimizations of the release version.
 
 ## How to Play
 
