@@ -22,7 +22,16 @@ SettingsState::SettingsState(StateStack& stack, Context context)
         // TODO add code
 	});
 
+	auto backButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
+	backButton->setPosition(window.getSize().x / 2, 300);
+	backButton->setText("Play");
+	backButton->setCallback([this] ()
+	{
+        requestStackPop();
+	});
+
 	mGUIContainer.pack(playButton);
+	mGUIContainer.pack(backButton);
 }
 
 void SettingsState::draw()

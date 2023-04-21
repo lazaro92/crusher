@@ -11,7 +11,8 @@ namespace States
 		PhoenixSplash,
 		Title,
 		Settings,
-		Test,
+		Gameplay,
+		Pause,
 	};
 }
 

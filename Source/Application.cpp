@@ -11,6 +11,8 @@
 #include "PhoenixState.hpp"
 #include "TitleState.hpp"
 #include "SettingsState.hpp"
+#include "GameplayState.hpp"
+#include "PauseState.hpp"
 
 
 const sf::Time Application::TimePerFrame = sf::seconds(1.f/60.f);
@@ -141,4 +143,6 @@ void Application::registerStates()
 	mStateStack.registerState<PhoenixState>(States::PhoenixSplash);
 	mStateStack.registerState<TitleState>(States::Title);
 	mStateStack.registerState<SettingsState>(States::Settings);
+	mStateStack.registerState<GameplayState>(States::Gameplay);
+	mStateStack.registerState<PauseState>(States::Pause);
 }

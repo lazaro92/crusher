@@ -8,7 +8,7 @@
 CXX      := g++
 OBJECTS  := main.o Button.o Component.o Container.o Label.o Application.o \
  CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o \
-State.o SoleauState.o PhoenixState.o TitleState.o SettingsState.o Utility.o # TestState.o Npc.o
+State.o SoleauState.o PhoenixState.o TitleState.o SettingsState.o GameplayState.o PauseState.o Utility.o 
 LIBRARY  := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -I Include/
 
@@ -94,12 +94,12 @@ TitleState.o: Source/TitleState.cpp Include/TitleState.hpp
 SettingsState.o: Source/SettingsState.cpp Include/SettingsState.hpp
 	$(CXX) $(CXXFLAGS) -c Source/SettingsState.cpp
 
+GameplayState.o: Source/GameplayState.cpp Include/GameplayState.hpp
+	$(CXX) $(CXXFLAGS) -c Source/GameplayState.cpp
 
-#TestState.o: Source/TestState.cpp Include/TestState.hpp
-#	$(CXX) $(CXXFLAGS) -c Source/TestState.cpp
+PauseState.o: Source/PauseState.cpp Include/PauseState.hpp
+	$(CXX) $(CXXFLAGS) -c Source/PauseState.cpp
 
-#Npc.o: Source/Npc.cpp Include/Npc.hpp
-#	$(CXX) $(CXXFLAGS) -c Source/Npc.cpp
 
 Utility.o: Source/Utility.cpp Include/Engine/Utility.hpp
 	$(CXX) $(CXXFLAGS) -c Source/Utility.cpp

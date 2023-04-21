@@ -34,7 +34,7 @@ TitleState::TitleState(StateStack& stack, Context context)
 	playButton->setCallback([this] ()
 	{
 		requestStackPop();
-		//requestStackPush(States::Settings);
+		requestStackPush(States::Gameplay);
 	});
 
 	auto settingsButton = std::make_shared<GUI::Button>(*context.fonts, *context.textures);
@@ -42,7 +42,6 @@ TitleState::TitleState(StateStack& stack, Context context)
 	settingsButton->setText("Settings");
 	settingsButton->setCallback([this] ()
 	{
-		requestStackPop();
 		requestStackPush(States::Settings);
 	});
 
